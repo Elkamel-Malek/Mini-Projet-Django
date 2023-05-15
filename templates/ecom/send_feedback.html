@@ -6,15 +6,21 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>LazyCoder || sumit</title>
+
 <style media="screen">
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
+* {
+  font-family:Arial;
+}
   .form-style-1 {
-  	margin:10px auto;
+  	margin:60px auto;
   	max-width: 400px;
   	padding: 20px 12px 10px 20px;
-  	font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  }
-  .form-style-1 li {
+  	font-size: 18px}
+  
+
+   .form-style-1 li {
   	padding: 0;
   	display: block;
   	list-style: none;
@@ -24,7 +30,7 @@
   	margin:0 0 3px 0;
   	padding:0px;
   	display:block;
-  	font-weight: bold;
+ 
   }
   .form-style-1 input[type=text],
   .form-style-1 input[type=date],
@@ -39,7 +45,7 @@
   	box-sizing: border-box;
   	-webkit-box-sizing: border-box;
   	-moz-box-sizing: border-box;
-  	border:1px solid #BEBEBE;
+  	border:1px solid #bebebe00;
   	padding: 7px;
   	margin:0px;
   	-webkit-transition: all 0.30s ease-in-out;
@@ -47,6 +53,8 @@
   	-ms-transition: all 0.30s ease-in-out;
   	-o-transition: all 0.30s ease-in-out;
   	outline: none;
+    border-radius: 21px;
+    
   }
   .form-style-1 input[type=text]:focus,
   .form-style-1 input[type=date]:focus,
@@ -69,49 +77,57 @@
 
   .form-style-1 .field-long{
   	width: 100%;
+    background: #F9F7F0;
+    color: #fff;
   }
   .form-style-1 .field-select{
   	width: 100%;
   }
   .form-style-1 .field-textarea{
-  	height: 100px;
+  	height: 200px;
+    width: 100%;
+    background: #F9F7F0;
+    color: black;
   }
   .form-style-1 input[type=submit], .form-style-1 input[type=button]{
-  	background: #4B99AD;
+  	background: #18B7BE;
   	padding: 8px 15px 8px 15px;
   	border: none;
   	color: #fff;
+    border-radius: 19px;
+
   }
   .form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover{
-  	background: #4691A4;
+  	background: #18b6bea1;
   	box-shadow:none;
   	-moz-box-shadow:none;
   	-webkit-box-shadow:none;
   }
   .form-style-1 .required{
-  	color:red;
+  	color:#18B7BE;
+    width: 100px;
   }
 </style>
 
 </head>
 
-<body style="background-color: #B3E5FC;">
+<body style="background-color: #fff;">
 
   {%if request.user.is_authenticated%}
     {% include "ecom/customer_navbar.html" %}
   {%else%}
-    {% include "ecom/navbar.html" %}
+  {% include "ecom/navbar.html" %}
   {%endif%}
 
   <center>
-    <h3 class='alert alert-success'>Send Us Your Valuable Feedback !</h3>
+    <h3 class="alert alert-light">Your feedback helps us get better :)</h3>
 
 
-    <form method="post">
+    <form class="box" method="post">
       {% csrf_token %}
     <ul class="form-style-1">
         <li>
-            <label>Name <span class="required">*</span></label>
+            <label>Name<span class="required">*</span></label>
             {% render_field feedbackForm.name class="field-long"  %}
 
         </li>
@@ -131,10 +147,5 @@
   </center>
   {% include "ecom/footer.html" %}
 </body>
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
 
 </html>

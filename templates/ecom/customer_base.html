@@ -10,14 +10,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
 <style>
-body {
-    background-color: #ebe0e0
-}
 
-#navbar {
-    background-color: #000;
-    color: black;
-}
+
 
 .row1 {
     padding-top: 10px;
@@ -93,12 +87,12 @@ body {
     display: inline-block;
     padding: 0 11px;
     line-height: 23px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arial','sans-serif';
     letter-spacing: 0;
     color: inherit;
     border: none;
     outline: none;
-    font-size: 12px
+    font-size: 15px
 }
 
 .dropdown {
@@ -174,61 +168,184 @@ body {
     cursor: pointer
 }
 
-        /*---------------------------------------
-           Social section
-        -----------------------------------------*/
-        footer {
-          padding: 0px 0px 0px 0px;
-          background-color: black;
-          margin: 0px;
-        }
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
+* {
+  font-family: 'Arial','Sans Serif';
+}
+
+section {
+  width: 100%;
+  display: inline-block;
+  background: #333;
+  height: 50vh;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.footer-distributed{
+	background: #333;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Open Sans', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  #6495ED;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+    font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #222;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #6495ED;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+  font-weight:400;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  #6495ED;
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #9cacb5;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
 
 
-        #ftr {
 
-          padding: 20px;
-        }
-
-        .fa {
-
-          font-size: 23px;
-          width: 60px;
-          text-align: center;
-          text-decoration: none;
-          margin: 5px 2px;
-          border-radius: 50%;
-        }
-
-        .fa:hover {
-          opacity: 0.5;
-          text-decoration: none;
-        }
-
-        .fa-facebook {
-          background: #3B5998;
-          color: white;
-          margin-top: 30px;
-        }
-
-        .fa-whatsapp {
-          background: #25d366;
-          color: white;
-        }
-
-        .fa-twitter {
-          background: #55ACEE;
-          color: white;
-        }
-
-        .fa-instagram {
-          background: #125688;
-          color: white;
-        }
-
-        p {
-          text-align: center;
-
-        }
 
 
 @media screen and (min-width: 768px) {
@@ -266,7 +383,7 @@ body {
         </div>
         <div class="row row2">
             <div class="col-sm-2">
-                <h2 style="margin:0px;"><a style="text-decoration:none; color:white;" href="/"><span class="largenav">Ecommerce </span></a></h2>
+                <h2 style="margin:0px;"><a style="text-decoration:none; color:white;" href="/"><span class="largenav">ArtyProd</span></a></h2>
             </div>
 
             <div class="navbar-search smallsearch col-sm-8 col-xs-11">
@@ -294,25 +411,59 @@ body {
 {% endblock content %}
 <!-- content end-->
 <br><br><br>
-<footer>
-  <p>
-    <a id="ftr" href="https://facebook.com/sumit.luv/" class="fa fa-facebook"></a>
-    <a id="ftr" href="https://api.whatsapp.com/send?phone=919572181024&text=Hello%20Sumit.%0d%0aHow%20are%20you%20%3f%0d%0aI%20came%20from%20your%20website.&source=&data=#" class="fa fa-whatsapp"></a>
-    <a id="ftr" href="https://instagram.com/sumit.luv" class="fa fa-instagram"></a>
-    <a id="ftr" href="https://twitter.com/sumitkumar1503" class="fa fa-twitter"></a>
-  </p>
+<footer class="footer-distributed">
 
-  <br>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 col-sm-12">
-        <div style="color:#ffffff;" class="wow fadeInUp footer-copyright">
-          <p>Made in India <br>
-            Copyright &copy; 2020 LazyCoder </p>
-        </div>
-      </div>
+    <div class="footer-left">
+
+        <h3>Arty<span>Prod</span></h3>
+
+        <p class="footer-links">
+            <a href="#" class="link-1">Home</a>
+            
+            <a href="#">Blog</a>
+        
+            <a href="#">Pricing</a>
+        
+            <a href="#">About</a>
+            
+            <a href="#">Faq</a>
+            
+            <a href="#">Contact</a>
+        </p>
+
+        <p class="footer-company-name">ArtyProd © 2015</p>
     </div>
-  </div>
+
+    <div class="footer-center">
+
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+        </div>
+
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>+1.555.555.5555</p>
+        </div>
+
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:support@company.com">support@company.com</a></p>
+        </div>
+
+    </div>
+
+    <div class="footer-right">
+
+        <p class="footer-company-about">
+            <span>About the company</span>
+            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+        </p>
+
+ 
+
+    </div>
+
 </footer>
 <script>
 $(document).ready(function(){

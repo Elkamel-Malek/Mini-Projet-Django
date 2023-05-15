@@ -5,12 +5,27 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>LazyCoder || sumit</title>
+  <title>ArtyProd</title>
+<style> 
+input[type=submit]{
+  background: #18B7BE;
+  padding: 8px 15px 8px 15px;
+  border: none;
+  color: #fff;
+  border-radius: 19px;
+  font-size: 18px;
 
+}
+ input[type=submit]:hover{
+  background: #18b6bea1;
+  box-shadow:none;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+}</style>
 
 </head>
 
-<body style="background-color: #B3E5FC;">
+<body style="background-color: white;">
 
   {%if request.user.is_authenticated%}
     {% include "ecom/customer_navbar.html" %}
@@ -19,7 +34,7 @@
   {%endif%}
 
   <center>
-    <h3 class='alert alert-success'>Send Us Your Valuable Feedback !</h3>
+    <h3 class="alert alert-light" role="alert">We’d love to hear from you</h3>
 
     <form method="POST">
       <!-- Very Important csrf Token -->
@@ -29,16 +44,13 @@
         <h3>{{ form.as_p }}</h3>
         </p>
         <br>
-        <input type="submit" value="Send Message" class='btn btn-primary btn-lg'>
+        <input type="submit" value="Send Message" >
       </div>
     </form>
   </center>
+  <br><br><br><br><br><br><br><br>
   {% include "ecom/footer.html" %}
 </body>
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
+
 
 </html>

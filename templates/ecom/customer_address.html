@@ -1,8 +1,8 @@
-{% extends 'ecom/customer_base.html' %}
+
 {% load static %}
 {% load widget_tweaks %}
 {% block content %}
-
+{% include "ecom/customer_navbar.html" %}
   <style type="text/css">
 .form-style-1 {
 	margin:10px auto;
@@ -21,6 +21,7 @@
 	padding:0px;
 	display:block;
 	font-weight: bold;
+	font-size:15px;
 }
 .form-style-1 input[type=text],
 .form-style-1 input[type=date],
@@ -43,6 +44,9 @@ select{
 	-ms-transition: all 0.30s ease-in-out;
 	-o-transition: all 0.30s ease-in-out;
 	outline: none;
+}
+.form-style-1 input[type=submit]{
+border-radius:2.5rem;
 }
 .form-style-1 input[type=text]:focus,
 .form-style-1 input[type=date]:focus,
@@ -85,7 +89,7 @@ select{
 	-webkit-box-shadow:none;
 }
 .form-style-1 .required{
-	color:red;
+	color:#072A40;
 }
 </style>
 {%if product_in_cart%}
@@ -112,10 +116,11 @@ select{
     </li>
 </ul>
 </form>
+<br><br><br><br><br>
 {%else%}
 <br><br>
-<h1 style="text-align:center; color:red;"> First Add Product In Cart </h1>
-<br><br><br><br><br><br><br><br><br><br>
+<h1 style="text-align:center; color:#178CA4;"> First add projects in cart </h1>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 {%endif%}
-
+{% include "ecom/footer.html" %}
 {% endblock content %}

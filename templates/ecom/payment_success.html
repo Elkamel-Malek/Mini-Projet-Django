@@ -1,6 +1,5 @@
-{% extends 'ecom/customer_base.html' %}
+{% include "ecom/customer_navbar.html" %}
 {% load static %}
-
 {% block content %}
 <style media="screen">
   .success-page{
@@ -8,9 +7,9 @@
   display:block;
   margin: 0 auto;
   text-align: center;
-      position: relative;
-    top: 50%;
-    transform: perspective(1px) translateY(50%)
+  position: relative;
+  top: 50%;
+  transform: perspective(1px) translateY(50%)
 }
 .success-page img{
   max-width:62px;
@@ -29,10 +28,11 @@
   background-color:#47c7c5;
   text-decoration: none;
   margin-bottom: 20px;
+  border-radius:2rem;
 }
 h2{
-  color:#0014ff;
-    margin-top: 25px;
+  color:#ffffff;
+  margin-top: 25px;
 
 }
 a{
@@ -48,4 +48,5 @@ a{
 </div>
 <br><br><br><br>
 <br><br><br><br>
+{% include "ecom/footer.html" %}
 {% endblock content %}

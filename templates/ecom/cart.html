@@ -11,7 +11,7 @@
   .button {
   display: inline-block;
   border-radius: 4px;
-  background-color: #f4511e;
+  background-color: #178CA4;
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -51,21 +51,23 @@
 .button2 {
   background-color: white;
   color: black;
-  border: 2px solid #008CBA;
+  border: 2px solid #178CA4;
 }
 
 .button2:hover {
-  background-color: #008CBA;
+  background-color: #178CA4;
   color: white;
+}
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #072A40;
+    border-color: #072A40;
 }
 
 </style>
 
 </head>
-<!--
-written By : sumit kumar
-facebook : fb.com/sumit.luv
--->
+
 <br><br><br><br>
 
 <div class="container">
@@ -107,14 +109,10 @@ facebook : fb.com/sumit.luv
 <br><br><br>
 <div style="text-align: center;">
   <button class="button button2">Total {{total}}</button>
-  <a href="/customer-address"><button class="button" ><span>Purchase </span></button></a>
+  <a href="/customer-address"><button class="button" ><span>Purchase</span></button></a>
 </div>
 
 
 <br><br><br><br><br>
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
+
 {% endblock content %}

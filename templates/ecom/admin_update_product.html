@@ -11,7 +11,7 @@
     .note {
       text-align: center;
       height: 80px;
-      background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+      background: -webkit-linear-gradient(left, #0077b6, #428bca);
       color: #fff;
       font-weight: bold;
       line-height: 80px;
@@ -33,7 +33,7 @@
       padding: 1%;
       width: 20%;
       cursor: pointer;
-      background: #0062cc;
+      background: #428bca;
       color: #fff;
     }
 
@@ -53,13 +53,13 @@
   <div class="container register-form">
     <div class="form">
       <div class="note">
-        <p>Update Product Details</p>
+        <p>Update Project Details</p>
       </div>
       <div class="form-content">
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              {% render_field productForm.name class="form-control" placeholder="Product Name" %}
+              {% render_field productForm.name class="form-control" placeholder="Project Name" %}
             </div>
             <div class="form-group">
               {% render_field productForm.description class="form-control" placeholder="Description" %}
@@ -81,10 +81,6 @@
     </div>
   </div>
 </form>
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
+
 
 {% endblock content %}

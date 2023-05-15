@@ -1,17 +1,11 @@
-{% extends 'ecom/homebase.html' %}
+{% include "ecom/navbar.html" %}
 {% load static %}
 {% block content %}
 <br><br><br>
-<img src="{% static "images/logout_img.png" %}"  style="width:800px; height:100px; padding-left:400px;">
+<h2 style="text-align: center;">You have successfully been logged out!</h2>
 
 <br><br><br><br><br>
 <br><br><br><br><br>
-<br><br><br>
-
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
-
+<br><br><br><br><br><br>
+{% include "ecom/footer.html" %}
 {% endblock content %}

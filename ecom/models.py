@@ -17,20 +17,26 @@ class Customer(models.Model):
 
 
 class Product(models.Model):
-    name=models.CharField(max_length=40)
+    name=models.CharField(max_length=100)
     product_image= models.ImageField(upload_to='product_image/',null=True,blank=True)
     price = models.PositiveIntegerField()
-    description=models.CharField(max_length=40)
+    description=models.CharField(max_length=300)
     def __str__(self):
         return self.name
+    
 
+
+class Personnel(models.Model):
+    utilisateur = models.OneToOneField(User, on_delete=models.CASCADE)
+    poste = models.CharField(max_length=200)
+    img = models.ImageField(blank=True, upload_to='media/')
 
 class Orders(models.Model):
     STATUS =(
         ('Pending','Pending'),
-        ('Order Confirmed','Order Confirmed'),
-        ('Out for Delivery','Out for Delivery'),
-        ('Delivered','Delivered'),
+        ('Project Confirmed','Project Confirmed'),
+        ('In progress','In progress'),
+        ('Completed','Completed'),
     )
     customer=models.ForeignKey('Customer', on_delete=models.CASCADE,null=True)
     product=models.ForeignKey('Product',on_delete=models.CASCADE,null=True)

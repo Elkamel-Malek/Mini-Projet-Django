@@ -1,7 +1,8 @@
-{% extends 'ecom/customer_base.html' %}
+
 {% load static %}
 
 {% block content %}
+{% include "ecom/customer_navbar.html" %}
 <head>
 
 </head>
@@ -12,8 +13,7 @@
 .pl-ziro { padding-left: 0px; }
 </style>
 <br><br>
-<marquee scrolldelay="50">ITS FAKE PAYMENT PAGE. WE DONOT STORE YOUR DATA</marquee>
-<marquee scrolldelay="50">ITS JUST FOR DEMO</marquee>
+
 <br><br>
 <div class="container" style="text-align:center; padding-left:300px;">
     <div class="row">
@@ -74,5 +74,5 @@
     </div>
 </div>
 
-
+{% include "ecom/footer.html" %}
 {% endblock content %}

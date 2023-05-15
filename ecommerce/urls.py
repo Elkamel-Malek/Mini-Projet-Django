@@ -1,16 +1,10 @@
-"""
 
-Developed By : sumit kumar
-facebook : fb.com/sumit.luv
-Youtube :youtube.com/lazycoders
-
-
-"""
 from django.contrib import admin
 from django.urls import path
 from ecom import views
 from django.contrib.auth.views import LoginView,LogoutView
 urlpatterns = [
+    
     path('admin/', admin.site.urls),
     path('',views.home_view,name=''),
     path('afterlogin', views.afterlogin_view,name='afterlogin'),
@@ -23,6 +17,7 @@ urlpatterns = [
 
     path('adminclick', views.adminclick_view),
     path('adminlogin', LoginView.as_view(template_name='ecom/adminlogin.html'),name='adminlogin'),
+    path('personnellogin', LoginView.as_view(template_name='ecom/personnellogin.html'),name='personnellogin'),
     path('admin-dashboard', views.admin_dashboard_view,name='admin-dashboard'),
 
     path('view-customer', views.view_customer_view,name='view-customer'),
@@ -43,6 +38,7 @@ urlpatterns = [
     path('customerlogin', LoginView.as_view(template_name='ecom/customerlogin.html'),name='customerlogin'),
     path('customer-home', views.customer_home_view,name='customer-home'),
     path('my-order', views.my_order_view,name='my-order'),
+    # path('my-order', views.my_order_view2,name='my-order'),
     path('my-profile', views.my_profile_view,name='my-profile'),
     path('edit-profile', views.edit_profile_view,name='edit-profile'),
     path('download-invoice/<int:orderID>/<int:productID>', views.download_invoice_view,name='download-invoice'),

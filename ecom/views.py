@@ -8,6 +8,7 @@ from django.contrib import messages
 from django.conf import settings
 
 def home_view(request):
+    personnels=models.Personnel.objects.all()
     products=models.Product.objects.all()
     if 'product_ids' in request.COOKIES:
         product_ids = request.COOKIES['product_ids']
@@ -20,7 +21,7 @@ def home_view(request):
     return render(request,'ecom/index.html',{'products':products,'product_count_in_cart':product_count_in_cart})
 
 
-#for showing login button for admin(by sumit)
+
 def adminclick_view(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect('afterlogin')
@@ -46,7 +47,7 @@ def customer_signup_view(request):
         return HttpResponseRedirect('customerlogin')
     return render(request,'ecom/customersignup.html',context=mydict)
 
-#-----------for checking user iscustomer
+
 def is_customer(user):
     return user.groups.filter(name='CUSTOMER').exists()
 
@@ -539,3 +540,23 @@ def contactus_view(request):
             send_mail(str(name)+' || '+str(email),message, settings.EMAIL_HOST_USER, settings.EMAIL_RECEIVING_USER, fail_silently = False)
             return render(request, 'ecom/contactussuccess.html')
     return render(request, 'ecom/contactus.html', {'form':sub})
+
+
+
+
+
+# Create your views here.
+
+def contact(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        organization = request.POST['organization']
+        email = request.POST['email']
+        description = request.POST['description']
+        budget = request.POST['budget']
+        date = request.POST['date']
+        data = Contact(name=name,organization=organization, email=email, description=description, budget=budget, date=date)
+        data.save()
+        return render(request, 'success.html')
+    else:
+        return render(request,'contact.html')

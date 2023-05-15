@@ -20,14 +20,19 @@
     .row {
       margin: 100px;
     }
+    .panel-primary>.panel-heading {
+    color: #fff;
+    background-color:#18B7BE;
+    border-color:#18B7BE;
+}
 
     .float{
 	position:fixed;
-	width:70px;
-	height:70px;
+	width:60px;
+	height:60px;
 	bottom:60px;
 	right:60px;
-	background-color:red;
+	background-color:#18B7BE;
 	color:#FFF;
 	border-radius:50px;
 	text-align:center;
@@ -39,16 +44,12 @@
 }
   </style>
 </head>
-<!--
-written By : sumit kumar
-facebook : fb.com/sumit.luv
--->
 
 
 <div class="container">
   <div class="panel panel-primary">
     <div class="panel-heading">
-      <h6 class="panel-title">Total Product List</h6>
+      <h6 class="panel-title">Total Project List</h6>
     </div>
     <table class="table table-hover" id="dev-table">
       <thead>
@@ -85,9 +86,5 @@ facebook : fb.com/sumit.luv
 <a href="/admin-add-product" class="float">
 <i class="fa fa-plus my-float"></i>
 </a>
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
+
 {% endblock content %}

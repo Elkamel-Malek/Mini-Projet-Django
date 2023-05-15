@@ -1,391 +1,664 @@
-{% extends 'ecom/customer_base.html' %}
+
 {% load static %}
 {% block content %}
+{% include "ecom/customer_navbar.html" %}
 
+<head>
 
+<!-- Vendor CSS Files -->
+<link href="assets/vendor/aos/aos.css" rel="stylesheet">
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <style media="screen">
-    body,
+<style media="screen">
+
+body,
 html {
-  height: 100%;
+height: 100%;
 }
 
 .d-flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+
 }
 
 .align-center {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+-webkit-box-align: center;
+-ms-flex-align: center;
+align-items: center;
 }
 
 .flex-centerY-centerX {
-  justify-content: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+justify-content: center;
+-webkit-box-pack: center;
+-ms-flex-pack: center;
+justify-content: center;
+-webkit-box-align: center;
+-ms-flex-align: center;
+align-items: center;
 }
 
 body {
-  background-color:#8c9eff;
+background-color:white;
 }
 
 .page-wrapper {
-  height: 100%;
-  display: table;
+height: 100%;
+display: table;
 }
 
 .page-wrapper .page-inner {
-  display: table-cell;
-  vertical-align: middle;
+display: table-cell;
+vertical-align: middle;
 }
 
 .el-wrapper {
-  width: 360px;
-  padding: 15px;
-  margin: 15px auto;
-  background-color: #fff;
+width: 400px;
+padding: 15px;
+margin: 0px auto;
+background-color:white;
 }
 
 @media (max-width: 991px) {
-  .el-wrapper {
-    width: 345px;
-  }
+.el-wrapper {
+width: 345px;
+}
 }
 
 @media (max-width: 767px) {
-  .el-wrapper {
-    width: 290px;
-    margin: 30px auto;
-  }
+.el-wrapper {
+width: 290px;
+margin: 30px auto;
+}
 }
 
 .el-wrapper:hover .h-bg {
-  left: 0px;
+left: 0px;
 }
 
 .el-wrapper:hover .price {
-  left: 20px;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  color: #818181;
+left: 20px;
+-webkit-transform: translateY(-50%);
+-ms-transform: translateY(-50%);
+-o-transform: translateY(-50%);
+transform: translateY(-50%);
+color: #818181;
 }
 
 .el-wrapper:hover .add-to-cart {
-  left: 50%;
+left: 50%;
 }
 
 .el-wrapper:hover .img {
-  webkit-filter: blur(7px);
-  -o-filter: blur(7px);
-  -ms-filter: blur(7px);
-  filter: blur(7px);
-  filter: progid:DXImageTransform.Microsoft.Blur(pixelradius='7', shadowopacity='0.0');
-  opacity: 0.4;
+webkit-filter: blur(7px);
+-o-filter: blur(7px);
+-ms-filter: blur(7px);
+filter: blur(7px);
+filter: progid:DXImageTransform.Microsoft.Blur(pixelradius='7', shadowopacity='0.0');
+opacity: 0.4;
+
 }
 
 .el-wrapper:hover .info-inner {
-  bottom: 155px;
+bottom: 155px;
 }
 
 .el-wrapper:hover .a-size {
-  -webkit-transition-delay: 300ms;
-  -o-transition-delay: 300ms;
-  transition-delay: 300ms;
-  bottom: 50px;
-  opacity: 1;
+-webkit-transition-delay: 300ms;
+-o-transition-delay: 300ms;
+transition-delay: 300ms;
+bottom: 50px;
+opacity: 1;
 }
 
 .el-wrapper .box-down {
-  width: 100%;
-  height: 60px;
-  position: relative;
-  overflow: hidden;
+width: 100%;
+height: 60px;
+position: relative;
+overflow: hidden;
 }
 
 .el-wrapper .box-up {
-  width: 100%;
-  height: 300px;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
+width: 100%;
+height: 300px;
+position: relative;
+overflow: hidden;
+text-align: center;
 }
 
 .el-wrapper .img {
-  padding: 20px 0;
-  -webkit-transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
-  -moz-transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
-  -o-transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
-  transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
-  /* ease-out */
-  -webkit-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  -moz-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  -o-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  /* ease-out */
+padding: 20px 0;
+-webkit-transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
+-moz-transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
+-o-transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
+transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
+/* ease-out */
+-webkit-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+-moz-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+-o-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+/* ease-out */
 }
 
 .h-bg {
-  -webkit-transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
-  -moz-transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
-  -o-transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
-  transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
-  /* ease-out */
-  -webkit-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  -moz-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  -o-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  /* ease-out */
-  width: 660px;
-  height: 100%;
-  background-color: #3f96cd;
-  position: absolute;
-  left: -659px;
+-webkit-transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
+-moz-transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
+-o-transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
+transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
+/* ease-out */
+-webkit-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+-moz-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+-o-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+/* ease-out */
+width: 660px;
+height: 100%;
+background-color: #18B7BE;
+position: absolute;
+left: -659px;
 }
 
 .h-bg .h-bg-inner {
-  width: 50%;
-  height: 100%;
-  background-color: #464646;
+width: 50%;
+height: 100%;
+background-color: #464646;
 }
 
 .info-inner {
-  -webkit-transition: all 400ms cubic-bezier(0, 0, 0.18, 1);
-  -moz-transition: all 400ms cubic-bezier(0, 0, 0.18, 1);
-  -o-transition: all 400ms cubic-bezier(0, 0, 0.18, 1);
-  transition: all 400ms cubic-bezier(0, 0, 0.18, 1);
-  /* ease-out */
-  -webkit-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  -moz-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  -o-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  /* ease-out */
-  position: absolute;
-  width: 100%;
-  bottom: 25px;
+-webkit-transition: all 400ms cubic-bezier(0, 0, 0.18, 1);
+-moz-transition: all 400ms cubic-bezier(0, 0, 0.18, 1);
+-o-transition: all 400ms cubic-bezier(0, 0, 0.18, 1);
+transition: all 400ms cubic-bezier(0, 0, 0.18, 1);
+/* ease-out */
+-webkit-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+-moz-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+-o-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+/* ease-out */
+position: absolute;
+width: 100%;
+bottom: 25px;
 }
 
 .info-inner .p-name,
 .info-inner .p-company {
-  display: block;
+display: block;
 }
 
 .info-inner .p-name {
-  font-family: 'PT Sans', sans-serif;
-  font-size: 18px;
-  color: #252525;
+font-family: 'PT Sans', sans-serif;
+font-size: 18px;
+color: #252525;
 }
 
 .info-inner .p-company {
-  font-family: 'Lato', sans-serif;
-  font-size: 12px;
-  text-transform: uppercase;
-  color: #FFE11B;
+font-family: 'Lato', sans-serif;
+font-size: 15px;
+
 }
 
 .a-size {
-  -webkit-transition: all 300ms cubic-bezier(0, 0, 0.18, 1);
-  -moz-transition: all 300ms cubic-bezier(0, 0, 0.18, 1);
-  -o-transition: all 300ms cubic-bezier(0, 0, 0.18, 1);
-  transition: all 300ms cubic-bezier(0, 0, 0.18, 1);
-  /* ease-out */
-  -webkit-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  -moz-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  -o-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  /* ease-out */
-  position: absolute;
-  width: 100%;
-  bottom: -20px;
-  font-family: 'PT Sans', sans-serif;
-  color: #828282;
-  opacity: 0;
+-webkit-transition: all 300ms cubic-bezier(0, 0, 0.18, 1);
+-moz-transition: all 300ms cubic-bezier(0, 0, 0.18, 1);
+-o-transition: all 300ms cubic-bezier(0, 0, 0.18, 1);
+transition: all 300ms cubic-bezier(0, 0, 0.18, 1);
+/* ease-out */
+-webkit-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+-moz-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+-o-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+/* ease-out */
+position: absolute;
+width: 100%;
+bottom: -20px;
+font-family: 'PT Sans', sans-serif;
+color: #828282;
+opacity: 0;
 }
 
 .a-size .size {
-  color: #252525;
+color: #252525;
 }
 
 .cart {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
+display: block;
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+font-family: 'Lato', sans-serif;
+font-weight: 700;
 }
-
+::-webkit-scrollbar {
+display: none;
+}
 .cart .price {
-  -webkit-transition: all 600ms cubic-bezier(0, 0, 0.18, 1);
-  -moz-transition: all 600ms cubic-bezier(0, 0, 0.18, 1);
-  -o-transition: all 600ms cubic-bezier(0, 0, 0.18, 1);
-  transition: all 600ms cubic-bezier(0, 0, 0.18, 1);
-  /* ease-out */
-  -webkit-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  -moz-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  -o-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  /* ease-out */
-  -webkit-transition-delay: 100ms;
-  -o-transition-delay: 100ms;
-  transition-delay: 100ms;
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  font-size: 16px;
-  color: #252525;
+-webkit-transition: all 600ms cubic-bezier(0, 0, 0.18, 1);
+-moz-transition: all 600ms cubic-bezier(0, 0, 0.18, 1);
+-o-transition: all 600ms cubic-bezier(0, 0, 0.18, 1);
+transition: all 600ms cubic-bezier(0, 0, 0.18, 1);
+/* ease-out */
+-webkit-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+-moz-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+-o-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+/* ease-out */
+-webkit-transition-delay: 100ms;
+-o-transition-delay: 100ms;
+transition-delay: 100ms;
+display: block;
+position: absolute;
+top: 50%;
+left: 50%;
+-webkit-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+-o-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+font-size: 16px;
+color: #252525;
 }
 
 .cart .add-to-cart {
-  -webkit-transition: all 600ms cubic-bezier(0, 0, 0.18, 1);
-  -moz-transition: all 600ms cubic-bezier(0, 0, 0.18, 1);
-  -o-transition: all 600ms cubic-bezier(0, 0, 0.18, 1);
-  transition: all 600ms cubic-bezier(0, 0, 0.18, 1);
-  /* ease-out */
-  -webkit-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  -moz-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  -o-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
-  /* ease-out */
-  -webkit-transition-delay: 100ms;
-  -o-transition-delay: 100ms;
-  transition-delay: 100ms;
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 110%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+-webkit-transition: all 600ms cubic-bezier(0, 0, 0.18, 1);
+-moz-transition: all 600ms cubic-bezier(0, 0, 0.18, 1);
+-o-transition: all 600ms cubic-bezier(0, 0, 0.18, 1);
+transition: all 600ms cubic-bezier(0, 0, 0.18, 1);
+/* ease-out */
+-webkit-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+-moz-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+-o-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
+/* ease-out */
+-webkit-transition-delay: 100ms;
+-o-transition-delay: 100ms;
+transition-delay: 100ms;
+display: block;
+position: absolute;
+top: 50%;
+left: 110%;
+-webkit-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+-o-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
 }
 
 .cart .add-to-cart .txt {
-  font-size: 12px;
-  color: #fff;
-  letter-spacing: 0.045em;
-  text-transform: uppercase;
-  white-space: nowrap;
+font-size: 12px;
+color: #fff;
+letter-spacing: 0.045em;
+text-transform: uppercase;
+white-space: nowrap;
 }
 * {
-  box-sizing: border-box;
+box-sizing: border-box;
 }
 
 /* Create three equal columns that floats next to each other */
 .column {
-  float: left;
-  width: 33.33%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+float: left;
+width: 33.33%;
+padding: 10px;
+height: 300px; /* Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+content: "";
+display: table;
+clear: both;
 }
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #37517e;
+  text-decoration:none;
+
+}
+
+.section-title h2::after {
+  content:"";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background:#178CA4;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+.portfolio #portfolio-flters {
+list-style: none;
+margin-bottom: 10px;
+
+}
+
+#portfolio-flters li {
+cursor: pointer;
+display: inline-block;
+margin: 10px 5px;
+font-size: 15px;
+font-weight: 500;
+line-height: 1;
+color: #444444;
+transition: all 0.3s;
+padding: 8px 20px;
+border-radius: 50px;
+font-family: "Poppins", sans-serif;
+
+}
+#portfolio-flters{
+justify-content: center;
+}
+
+#portfolio-flters li:hover,
+#portfolio-flters li.filter-active {
+background:#178CA4;
+color: #fff;
+}
+#s{
+color: #18B7BE;
+}
+
+
+.team .member {
+position: relative;
+box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+padding: 60px;
+border-radius: 5px;
+background: #fff;
+transition: 0.5s;
+height: 100%;
+margin-top:20px;
+}
+
+.team .member .pic {
+overflow: hidden;
+width: 180px;
+border-radius: 50%;
+}
+
+.team .member .pic img {
+transition: ease-in-out 0.3s;
+}
+
+.team .member:hover {
+transform: translateY(-10px);
+}
+
+.team .member .member-info {
+padding-left: 30px;
+}
+
+.team .member h4 {
+font-weight: 700;
+margin-bottom: 10px;
+font-size: 20px;
+color: #37517e;
+}
+
+.team .member span {
+display: block;
+font-size: 15px;
+padding-bottom: 10px;
+position: relative;
+font-weight: 500;
+}
+
+.team .member span::after {
+content: "";
+position: absolute;
+display: block;
+width: 50px;
+height: 1px;
+background: #cbd6e9;
+bottom: 0;
+left: 0;
+}
+
+.team .member p {
+margin: 10px 0 0 0;
+font-size: 14px;
+}
+
+.team .member .social {
+margin-top: 20px;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+}
+
+.team .member .social a {
+transition: ease-in-out 0.3s;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50px;
+width: 32px;
+height: 32px;
+background: #eff2f8;
+}
+
+.team .member .social a i {
+color: #37517e;
+font-size: 16px;
+margin: 0 2px;
+}
+
+.team .member .social a:hover {
+background: #47b2e4;
+}
+
+.team .member .social a:hover i {
+color: #fff;
+}
+
+.team .member .social a+a {
+margin-left: 8px;
+}
+#team{
+background-color:#fff;
+text-decoration:none;
+font-size:15px;
+
+font-weight:lighter;
+
+
+}
+
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
+.column {
+width: 100%;
 }
-  </style>
+}
+</style>
+</head>
+
+
+
+<br>
+
+<h3 style="text-align:center;">Welcome back to <span id="s">ArtyProd </span><strong>{{request.user}}</strong></h3>
+<br><br><br>
 
 
 
 
-  {%if products%}
-  <h3 style="text-align:center; color:yellow;">{{word}}</h3>
-  <br>
-  <!-- products data starttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt -->
-  <div class="row">
+<div class="section-title">
+<h2 style="text-align:center;">Portfolio</h2>
+<p style="text-align:center;">From customer satisfaction to business success!<br>see how we help companies achieve their best version</p>
 
-      {% for p in products %}
-      <!-- card1 -->
-      <div class="column">
-      <div class="container page-wrapper" style="width: 450px;">
-        <div class="page-inner">
-          <div class="row">
-            <div class="el-wrapper">
-              <div class="box-up">
-                <img class="img" src="{% static p.product_image.url %}" alt="product pic" height="300px" width="300px">
-                <div class="img-info">
-                  <div class="info-inner">
-                    <span style="background-color:#08050a; color:yellow;" class="p-company">{{p.name}}</span>
+<ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+  <li data-filter="*" class="filter-active">All</li>
+  <li data-filter=".filter-app">Design</li>
+  <li data-filter=".filter-card">Audiovisuelle</li>
+  <li data-filter=".filter-web">3D</li>
+</ul>
+{%if products%}
+<h3 style="text-align:center; color:#072A40;">{{word}}</h3>
+<br>
+<!-- products data startttttttt-->
+<div class="row">
 
-                  </div>
-                  <div class="a-size">{{p.description}}</div>
+    {% for p in products %}
+    <!-- card1 -->
+    <div class="column">
+    <div class="container page-wrapper" style="width: 450px;">
+      <div class="page-inner">
+        <div class="row">
+          <div class="el-wrapper">
+            <div class="box-up">
+              <img class="img" src="{% static p.product_image.url %}" alt="product pic" height="350px" width="400px">
+              <div class="img-info">
+                <div class="info-inner">
+                  <span style="background-color:#072A40; color:white;"class="p-company">{{p.name}}</span>
+
                 </div>
+                <div class="a-size">{{p.description}}</div>
+              </div>
+            </div>
+
+            <div class="box-down">
+              <div class="h-bg">
+                <div class="h-bg-inner"></div>
               </div>
 
-              <div class="box-down">
-                <div class="h-bg">
-                  <div class="h-bg-inner"></div>
-                </div>
-
-                <a class="cart" href="{% url 'add-to-cart' p.id  %}">
-                  <span class="price">₹ {{p.price}}</span>
-                  <span class="add-to-cart">
-                    <span class="txt">Add in cart</span>
-                  </span>
-                </a>
-              </div>
+              <a class="cart" href="{% url 'add-to-cart' p.id  %}">
+                <span class="price">₹ {{p.price}}</span>
+                <span class="add-to-cart">
+                  <span class="txt">ask for this project</span>
+                </span>
+              </a>
             </div>
           </div>
         </div>
       </div>
-      </div>
+    </div>
+    </div>
 <!-- card1 end -->
 {% if forloop.counter|divisibleby:"3" %}
-    </div>
-    <div class="row">
-          <br><br><br><br><br>
+  </div>
+
+  <div class="row">
+
+        <br><br><br><br><br>
 {% endif %}
-
-  {% endfor %}
+{% endfor %}
 </div>
-<!-- products data enddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd -->
-
-
+<!-- products data end-->
 {%else%}
-<h3 style="text-align:center; color:yellow;">No Search Found</h3>
+<h3 style="text-align:center; color:#072A40;">No Search Found</h3>
 {%endif%}
 
-<script>
-    {%if messages %}
-    {%for message in messages%}
-    alert('{{message}}');
-    {%endfor%}
-    {%endif%}
-</script>
+<br><br><br><br><br><br>
 <br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<!-- ======= Team Section ======= -->
+<section id="team" class="team section-bg">
+<div class="container" data-aos="fade-up">
+
+  <div class="section-title">
+    <h2>Experienced & Professional Team</h2>
+    <p>You can relay on our amazing features list and also our customer services<br>will be great experience for you without doubt and in no-time</p>
+  </div>
+
+  <div class="row">
+
+    <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+      <div class="member d-flex align-items-start">
+        <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
+        <div class="member-info">
+          <h4>Aymen Mokadem</h4>
+          <span>Chief Executive Officer</span>
+          <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+          <div class="social">
+            <a href=""><i class="ri-twitter-fill"></i></a>
+            <a href=""><i class="ri-facebook-fill"></i></a>
+            <a href=""><i class="ri-instagram-fill"></i></a>
+            <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
+      <div class="member d-flex align-items-start">
+        <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
+        <div class="member-info">
+          <h4>Sarah Jhonson</h4>
+          <span>Product Manager</span>
+          <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
+          <div class="social">
+            <a href=""><i class="ri-twitter-fill"></i></a>
+            <a href=""><i class="ri-facebook-fill"></i></a>
+            <a href=""><i class="ri-instagram-fill"></i></a>
+            <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="300">
+      <div class="member d-flex align-items-start">
+        <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
+        <div class="member-info">
+          <h4>Haykel Ben Othman</h4>
+          <span>CTO</span>
+          <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
+          <div class="social">
+            <a href=""><i class="ri-twitter-fill"></i></a>
+            <a href=""><i class="ri-facebook-fill"></i></a>
+            <a href=""><i class="ri-instagram-fill"></i></a>
+            <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
+      <div class="member d-flex align-items-start">
+        <div class="pic"><img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
+        <div class="member-info">
+          <h4>Med Amir Saadallah</h4>
+          <span>Accountant</span>
+          <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
+          <div class="social">
+            <a href=""><i class="ri-twitter-fill"></i></a>
+            <a href=""><i class="ri-facebook-fill"></i></a>
+            <a href=""><i class="ri-instagram-fill"></i></a>
+            <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</section><!-- End Team Section -->
 
 
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br>
 
 
 
+
+
+
+{% include "ecom/footer.html" %}
 {% endblock content %}

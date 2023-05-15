@@ -5,31 +5,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>LazyCoder || sumit</title>
+  <title>ArtyProd</title>
 
   <title>sumit</title>
   <style media="screen">
     .footer{
       position: fixed;
     }
+    h4{
+      padding: 0.47em;
+      
+    }
+    h2{
+      color:#072A40;
+      padding: 0.30em;
+    }
   </style>
 </head>
 
-<body style="background-color: #B3E5FC;">
+<body style="background-color: white;">
   {%if request.user.is_authenticated%}
     {% include "ecom/customer_navbar.html" %}
   {%else%}
     {% include "ecom/navbar.html" %}
   {%endif%}
   <br><br><br>
-<h3 style="text-align:center;">“I don’t create companies for the sake of creating companies, but to get things done.” </h3>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<h2 style="text-align:center;">“NOTRE AGENCE D’ANIMATION ET DE DESIGN 3D” </h2><br>
+
+<h4  style="text-align: justify">l’animation 3D et la création en motion design ne s’improvisent pas, vous devez faire appel à un professionnel pour concrétiser votre projet. Confiez votre projet à ArtyProd, votre expert spécialisé qui maitre l’art des effets spéciaux en 3D et en motion design.</h4>
+<h2  style="text-align: justify">Présentation de notre agence</h2>
+<h4  style="text-align: justify">Besoin d’un visuel captivant et percutant, vous avez frappé à la bonne porte.ArtyProd digital est une agence spécialisée dans l’audiovisuelle, basée à Paris. Nous disposons de longues années d’expérience qui nous permet de vous offrir des solutions modernes et créatives en matière de médias. Ainsi, nous vous accompagnons dans la concrétisation de tout projet cinématographique, publicitaire ou digital pour votre entreprise.</h4>
+<h2  style="text-align: justify">Notre méthodologie de travail</h2>
+<h4  style="text-align: justify">À votre disposition, ArtyProd Digital met tout en œuvre pour donner corps à vos aspirations et à vos exigences.Nous plaçons en priorité l’écoute pour la compréhension de vos besoins. Une équipe créative se charge ensuite de tout mettre en place, selon votre aval bien évidemment. À l’affût des nouvelles techniques du web, nos prestations s’adaptent à la convergence actuelle des médias. N’hésitez pas à nous contacter via le formulaire de contact ou directement par téléphone pour plus détails.</h4>
+
+
+
+ 
+
+
+<br><br><br><br><br><br><br><br>
   {% include "ecom/footer.html" %}
 </body>
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
+
 
 </html>
